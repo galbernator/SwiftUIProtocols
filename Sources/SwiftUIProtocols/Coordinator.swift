@@ -12,11 +12,11 @@ public protocol Coordinator: EventHandler, Navigator {
     associatedtype StartContent: View
 
     /// Provides the initial view for the coordinator when accessed directly by user interation.
-    public @ViewBuilder func start() -> StartContent
+    @ViewBuilder public func start() -> StartContent
 }
 
 public extension Coordinator {
-    public @ViewBuilder func start() -> some View {
+    @ViewBuilder public func start() -> some View {
         Text("Providing views must be handled in the conforming class, not by the default implementation")
     }
 }
