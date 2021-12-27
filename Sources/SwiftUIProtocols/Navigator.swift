@@ -13,11 +13,11 @@ public protocol Navigator {
 
     /// The means of providing the next view by the conforming object
     /// - Parameter destination: A `Destination` as defined in the conforming object
-    @ViewBuilder public func view(for destination: Destination) -> ViewContent
+    @ViewBuilder func view(for destination: Destination) -> ViewContent
 }
 
 public extension Navigator {
-    @ViewBuilder public func view(for destination: DefaultDestination) -> some View {
+    @ViewBuilder func view(for destination: DefaultDestination) -> some View {
         Text("Providing views must be handled in the conforming class, not by the default implementation")
     }
 }

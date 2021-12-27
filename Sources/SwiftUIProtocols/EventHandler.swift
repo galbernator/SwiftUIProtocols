@@ -13,11 +13,11 @@ public protocol EventHandler {
 
     /// The means of sending a signal that a user event has occured and needs to be handled by the conforming object
     /// - Parameter event: An `Event` as defined in the conforming object
-    public func send(_ event: Event)
+    func send(_ event: Event)
 }
 
 public extension EventHandler {
-    public func send(_ event: DefaultEvent) {
+    func send(_ event: DefaultEvent) {
         fatalError("Receiving events must be handled in the conforming class, not by the default implementation")
     }
 }
