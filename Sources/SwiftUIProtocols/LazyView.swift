@@ -10,6 +10,10 @@ import SwiftUI
 /// Allows for the view body to be specifically built when the body is called
 public struct LazyView<Content: View>: View {
     @ViewBuilder var build: (() -> Content)
+    
+    public init(build: @escaping (() -> Content)) {
+        self.build = build
+    }
 
     public var body: some View {
         build()
